@@ -88,7 +88,7 @@
 
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center"><br><br><br><br><br><br><br><br><br><br><br>
-                <h1 class="animated bounceInDown">Website Wisata tes<br> Kabupaten Barito Selatan</h1>
+                <h1 class="animated bounceInDown">Website Wisata tes lagi<br> Kabupaten Barito Selatan</h1>
                 <p class="animated fadeInUpDelay">Selamat Datang di Website Wisata Barito Selatan <br>
                     Wilayah Kabupaten yang terletak di provinsi Kalimantan Tengah, Indonesia.<br>
                     Dengan Ibu kotanya Buntok <br>
