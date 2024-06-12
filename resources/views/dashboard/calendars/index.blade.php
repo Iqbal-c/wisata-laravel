@@ -16,17 +16,17 @@
         <table class="table table-striped table-sm">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">No</th>
                     <th scope="col">Title</th>
-                    <th scope="col">Category</th>
+                    <th scope="col">Exerpt</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
-                {{-- @foreach ($calendars as $calendar)
+                @foreach ($calendars as $calendar)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $calendar->title }}</td>
+                        <td>{{ $calendar->exerpt }}</td>
                         <td>{{ $calendar->category->name }}</td>
                         <td>
                             <a href="/dashboard/calendars/{{ $calendar->slug }}" class="badge bg-info"><span data-feather="eye"></span> </a>
@@ -39,7 +39,7 @@
                             </form>
                         </td>
                     </tr>
-                @endforeach --}}
+                @endforeach
             </tbody>
         </table>
     </div>
