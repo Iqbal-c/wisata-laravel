@@ -29,9 +29,10 @@
                         <td>{{ $calendar->exerpt }}</td>
                         <td>{{ $calendar->category->name }}</td>
                         <td>
-                            <a href="/dashboard/calendars/{{ $calendar->slug }}" class="badge bg-info"><span data-feather="eye"></span> </a>
-                            <a href="/dashboard/calendars/{{ $calendar->slug }}/edit" class="badge bg-warning"><span data-feather="edit"></span></a>
-                            <form action="/dashboard/calendars/{{ $calendar->slug }}" method="calendar" class="d-inline">
+                            <a href="/dashboard/calendars/{{ $calendar->id }}" class="badge bg-info"><span data-feather="eye"></span> </a>
+                            {{-- <a href="/dashboard/calendars" class="badge bg-info"><span data-feather="eye"></span> </a> --}}
+                            <a href="/dashboard/calendars/{{ $calendar->id }}/edit" class="badge bg-warning"><span data-feather="edit"></span></a>
+                            <form action="/dashboard/calendars/{{ $calendar->id }}" method="calendar" class="d-inline">
                                 @method('delete')
                                 @csrf
                                 <button class="badge bg-danger border-0" onclick="return confirm('Are you sure?')"><span

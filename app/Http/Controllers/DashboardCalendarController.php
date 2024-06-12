@@ -22,7 +22,7 @@ class DashboardCalendarController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.calendars.create');
     }
 
     /**
@@ -38,7 +38,9 @@ class DashboardCalendarController extends Controller
      */
     public function show(Calendar $calendar)
     {
-        //
+        return view('dashboard.calendar.show', [
+            'calendar' => $calendar
+        ]);
     }
 
     /**
