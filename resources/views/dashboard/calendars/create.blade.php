@@ -62,7 +62,7 @@
             <button type="submit" class="btn btn-primary">Create Event</button>
         </form>
     </div>
-    <script>
+    {{-- <script>
         const title = document.querySelector('#title');
         // const slug = document.querySelector('#slug');
 
@@ -89,5 +89,5 @@
         //         imgPreview.src = oFREvent.target.result;
         //     }
         // }
-    </script>
+    </script> --}}
 @endsection

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Calendar;
 use Illuminate\Http\Request;
+use Clockwork\Support\Lumen\Controller;
 
 class DashboardCalendarController extends Controller
 {
@@ -22,6 +23,7 @@ class DashboardCalendarController extends Controller
      */
     public function create()
     {
+        return "tes create calendar";
         return view('dashboard.calendars.create');
     }
 
@@ -38,6 +40,7 @@ class DashboardCalendarController extends Controller
      */
     public function show(Calendar $calendar)
     {
+        return "tes halaman";
         return view('dashboard.calendar.show', [
             'calendar' => $calendar
         ]);
