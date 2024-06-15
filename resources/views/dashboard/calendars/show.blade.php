@@ -17,7 +17,7 @@
                             data-feather="x-circle"></span> Delete</button>
                 </form>
 
-                @if ($calendar->image)
+                {{-- @if ($calendar->image)
                     <div style="max-height: 350px; overflow:hidden;">
                         <img src="{{ asset('storage/' . $calendar->image) }}" alt="{{ $calendar->category->name }}"
                             class="img-fluid mt-3">
@@ -25,7 +25,7 @@
                 @else
                     <img src="https://source.unsplash.com/1200x400?{{ $calendar->category->name }}"
                         alt="{{ $calendar->category->name }}" class="img-fluid mt-3">
-                @endif
+                @endif --}}
 
                 <article class="my-3 fs-5">
                     {!! $calendar->body !!}

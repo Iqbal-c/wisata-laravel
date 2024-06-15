@@ -51,6 +51,7 @@
                     </div>
                 @enderror
             </div> --}}
+            
             <div class="mb-3">
                 <label for="body" class="form-label">Body</label>
                 @error('body')
@@ -90,4 +91,7 @@
         //     }
         // }
     </script> --}}
+    <script>
+        CKEDITOR.replace('body');
+    </script>
 @endsection

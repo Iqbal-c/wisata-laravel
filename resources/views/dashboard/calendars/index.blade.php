@@ -23,25 +23,35 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($calendars as $calendar)
+                @forelse ($calendars as $calendar)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
+                        <td>{{ $calendar->title }}</td>
                         <td>{{ $calendar->exerpt }}</td>
-                        <td>{{ $calendar->category->name }}</td>
+                        <td>{{ $calendar->body }}</td>
                         <td>
                             <a href="/dashboard/calendars/{{ $calendar->id }}" class="badge bg-info"><span data-feather="eye"></span> </a>
                             {{-- <a href="/dashboard/calendars" class="badge bg-info"><span data-feather="eye"></span> </a> --}}
                             <a href="/dashboard/calendars/{{ $calendar->id }}/edit" class="badge bg-warning"><span data-feather="edit"></span></a>
                             <form action="/dashboard/calendars/{{ $calendar->id }}" method="calendar" class="d-inline">
-                                @method('delete')
                                 @csrf
-                                <button class="badge bg-danger border-0" onclick="return confirm('Are you sure?')"><span
+                                @method('delete')
+                                <button class="badge bg-danger border-0" onclick="return confirm('Apakah anda yakin ?')"><span
                                         data-feather="x-circle"></span></button>
                             </form>
                         </td>
                     </tr>
-                @endforeach
+                @empty
+                    <tr>
+                        <td class="text-center text-sm text-gray-900 px-6 py-4 whitespace-nowrap" colspan="4">Data calendar tidak tersedia</td>
+                    </tr>
+                @endforelse
             </tbody>
         </table>
+
+        <div class="mt-3">
+            {{ $calendars->links() }}
+        </div>
+        
     </div>
 @endsection

@@ -47,6 +47,15 @@
         integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous">
     </script>
 
+    {{-- <script src="https://cdn.tailwindcss.com/?plugins=forms"></script>
+
+    <script src="https://cdn.tailwindcss.com/?plugins=forms"></script>
+    <script src="https://cdn.ckeditor.com/4.18.0/standard/ckeditor.js"></script>
+
+    <script src="https://cdn.tailwindcss.com/?plugins=forms"></script>
+    <script src="https://cdn.ckeditor.com/4.18.0/standard/ckeditor.js"></script> --}}
+    
+
     <script src="/js/dashboard.js"></script>
 </body>
 

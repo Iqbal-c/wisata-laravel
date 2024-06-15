@@ -89,3 +89,4 @@ Route::resource('/dashboard/posts', DashboardPostController::class)->middleware(
 Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');
 
 Route::resource('/dashboard/calendars', DashboardCalendarController::class)->middleware('auth');
+Route::get('/dashboard/calendar/create', [DashboardCalendarController::class, 'create'])->middleware('auth');
