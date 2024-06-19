@@ -6,6 +6,7 @@ use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\RegisterController;
@@ -88,5 +89,9 @@ Route::resource('/dashboard/posts', DashboardPostController::class)->middleware(
 
 Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');
 
+
+
 Route::resource('/dashboard/calendars', DashboardCalendarController::class)->middleware('auth');
-Route::get('/dashboard/calendar/create', [DashboardCalendarController::class, 'create'])->middleware('auth');
+
+Route::get('events/list', [EventController::class, 'listEvent'])->name('events.list');
+Route::resource('events', EventController::class);

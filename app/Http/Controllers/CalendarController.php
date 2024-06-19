@@ -13,7 +13,7 @@ class CalendarController extends Controller
      */
     public function index()
     {
-        //
+        return view('calendar');
     }
 
     /**
@@ -21,7 +21,7 @@ class CalendarController extends Controller
      */
     public function create()
     {
-        //
+        return view('event-form', ['data' => $event, 'action' => route('events.store')]);
     }
 
     /**

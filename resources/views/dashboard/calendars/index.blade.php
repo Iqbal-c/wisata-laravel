@@ -12,7 +12,7 @@
     @endif
 
     <div class="table-responsive col-lg-8">
-        <a href="/dashboard/calendar/create" class="btn btn-primary mb-3">Create new event</a>
+        <a href="/dashboard/calendars/create" class="btn btn-primary mb-3">Create new event</a>
         <table class="table table-striped table-sm">
             <thead>
                 <tr>

@@ -30,20 +30,16 @@ class DashboardCalendarController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [  
-            'title' => 'required|string|max:151',  
+        $validatedData = $request->validate([
+            'title' => 'required|max:255',
             'body' => 'required'
-        ]);  
+        ]);
 
-        $post = Calendar::create([  
-            'title' => $request->get('title'),  
-            'body' => $request->get('content') 
-        ]);  
 
-        $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200);
+        Calendar::create($validatedData);
 
-        return redirect()->route('calendar.index')  
-            ->with('success', 'Calendar created successfully.');
+        return redirect('/dashboard/calendars')->with('success', 'New calendars has been added!');
+
     }
 
     /**

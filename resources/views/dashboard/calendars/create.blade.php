@@ -6,7 +6,7 @@
     </div>
 
     <div class="col-lg-8">
-        <form method="post" action="/dashboard/calendar" class="mb-5" enctype="multipart/form-data">
+        <form method="post" action="/dashboard/calendars" class="mb-5" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
@@ -63,7 +63,7 @@
             <button type="submit" class="btn btn-primary">Create Event</button>
         </form>
     </div>
-    {{-- <script>
+    <script>
         const title = document.querySelector('#title');
         // const slug = document.querySelector('#slug');
 
@@ -90,7 +90,7 @@
         //         imgPreview.src = oFREvent.target.result;
         //     }
         // }
-    </script> --}}
+    </script>
     <script>
         CKEDITOR.replace('body');
     </script>
