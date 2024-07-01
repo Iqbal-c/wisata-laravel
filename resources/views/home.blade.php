@@ -338,10 +338,6 @@
                       },
                       success: function (res) {
                           modal.html(res).modal('show')
-                          $('.datepicker').datepicker({
-                              todayHighlight: true,
-                              format: 'yyyy-mm-dd'
-                          });
 
                           $('#form-action').on('submit', function(e) {
                               e.preventDefault()
@@ -354,8 +350,7 @@
                                   processData: false,
                                   contentType: false,
                                   success: function (res) {
-                                      modal.modal('hide')
-                                      calendar.refetchEvents()
+                                      console.log(res);
                                   },
                                   error: function (res) {
 
