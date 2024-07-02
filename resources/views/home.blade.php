@@ -350,11 +350,9 @@
                                   processData: false,
                                   contentType: false,
                                   success: function (res) {
-                                      console.log(res);
-                                  },
-                                  error: function (res) {
-
-                                  }
+                                    modal.modal('hide')
+                                    calendar.refetchEvents()
+                                }
                               })
                           })
                       }

@@ -48,17 +48,7 @@ class EventController extends Controller
      */
     public function store(EventRequest $request, Event $event)
     {
-        $event->start_date = $request->start_date;
-        $event->end_date = $request->end_date;
-        $event->title = $request->title;
-        $event->category = $request->category;
-
-        $event->save();
-
-        return response()->json([
-            'status' => 'success',
-            'message' => 'Save daya successfully'
-        ]);
+        return $this->update($request, $event);
     }
 
     /**
@@ -74,15 +64,25 @@ class EventController extends Controller
      */
     public function edit(Event $event)
     {
-        //
+        return view('event-form', ['data' => $event, 'action' => route('events.update', $event->id)]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Event $event)
+    public function update(EventRequest $request, Event $event)
     {
-        //
+        $event->start_date = $request->start_date;
+        $event->end_date = $request->end_date;
+        $event->title = $request->title;
+        $event->category = $request->category;
+
+        $event->save();
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Save data successfully'
+        ]);
     }
 
     /**
