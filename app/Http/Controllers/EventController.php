@@ -72,6 +72,9 @@ class EventController extends Controller
      */
     public function update(EventRequest $request, Event $event)
     {
+        if ($request->has('delete')) {
+            return $this->destroy($event);
+        }
         $event->start_date = $request->start_date;
         $event->end_date = $request->end_date;
         $event->title = $request->title;
@@ -90,6 +93,10 @@ class EventController extends Controller
      */
     public function destroy(Event $event)
     {
-        //
+        $event->delete();
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Delete data successfully'
+        ]);
     }
 }

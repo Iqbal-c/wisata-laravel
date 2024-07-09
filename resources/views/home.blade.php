@@ -30,7 +30,9 @@
     <meta name="csrf_token" content="{{ csrf_token() }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css" integrity="sha512-O03ntXoVqaGUTAeAmvQ2YSzkCvclZEcPQu1eqloPaHfJ5RuNGiS4l+3duaidD801P50J28EHyonCV06CUlTSag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="ec/style.css" />
     <!-- Fonts -->
@@ -94,7 +96,7 @@
 
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center"><br><br><br><br><br><br><br><br><br><br><br>
-                <h1 class="animated bounceInDown">Website Wisata tes lagi<br> Kabupaten Barito Selatan</h1>
+                <h1 class="animated bounceInDown">Website Wisata<br> Kabupaten Barito Selatan</h1>
                 <p class="animated fadeInUpDelay">Selamat Datang di Website Wisata Barito Selatan <br>
                     Wilayah Kabupaten yang terletak di provinsi Kalimantan Tengah, Indonesia.<br>
                     Dengan Ibu kotanya Buntok <br>
@@ -105,13 +107,13 @@
         </section>
 
       <div class="event-container">
-          <div class="col-12">
+          <div class="col-12 mt-5">
             <h3 class="year">KALENDER EVEN</h3>
           </div>
 
           <div class="container">
             <div class="row">
-                <div class="col-12 mt-3">
+                <div class="col-12 mt-3 mb-4">
                     <div id='calendar'></div>
                 </div>
             </div>
@@ -339,6 +341,10 @@
                       },
                       success: function (res) {
                           modal.html(res).modal('show')
+                          $('.datepicker').datepicker({
+                            todayHighlight: true,
+                            format: 'yyyy-mm-dd'
+                        });
 
                           $('#form-action').on('submit', function(e) {
                               e.preventDefault()
@@ -353,6 +359,9 @@
                                   success: function (res) {
                                     modal.modal('hide')
                                     calendar.refetchEvents()
+                                },
+                                error: function (res) {
+
                                 }
                               })
                           })
@@ -408,13 +417,13 @@
                           });
                       },
                       error: function (res) {
-                          const message = res.responseJSON.message
-                          info.revert()
-                          iziToast.error({
-                              title: 'Error',
-                              message: message ?? 'Something wrong',
-                              position: 'topRight'
-                          });
+                        const message = res.responseJSON.message
+                        info.revert()
+                        iziToast.error({
+                            title: 'Error',
+                            message: message ?? 'Something wrong',
+                            position: 'topRight'
+                        });
                       }
                   })
               },
