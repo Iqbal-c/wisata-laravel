@@ -94,4 +94,4 @@ Route::resource('/dashboard/categories', AdminCategoryController::class)->except
 Route::resource('/dashboard/calendars', DashboardCalendarController::class)->middleware('auth');
 
 Route::get('events/list', [EventController::class, 'listEvent'])->name('events.list');
-Route::resource('/', EventController::class);
+Route::resource('events', EventController::class);

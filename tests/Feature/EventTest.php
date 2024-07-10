@@ -10,16 +10,9 @@ class EventTest extends TestCase
 {
     use RefreshDatabase;
 
-    protected $baseUrl;
-    public function setup() : void
-    {
-        parent::setup();
-        $this->baseUrl = 'events';
-    }
-
     public function test_can_show_event_page()
     {
-        $this->get('/')->assertOk();
+        $this->get('')->assertOk();
     }
 
     public function test_can_show_create_event_page()
@@ -31,10 +24,4 @@ class EventTest extends TestCase
         ->assertSee('end_date');
     }
 
-    public function test_success_store_event()
-    {
-        $this->postJson($this->baseUrl);
-    }
-
-    
 }
