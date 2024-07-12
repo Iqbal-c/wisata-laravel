@@ -9,8 +9,7 @@ use Tests\TestCase;
 
 class EventTest extends TestCase
 {
-    // use RefreshDatabase;
-    use WithFaker;
+    use RefreshDatabase, WithFaker;
 
     protected $baseUrl;
     public function setup() : void
