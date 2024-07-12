@@ -35,22 +35,12 @@ class EventTest extends TestCase
 
      public function test_success_store_event()
     {
-        $this->postJson($this->baseUrl, [
-            'title' => $this->faker->sentence(3),
-            'start_date' => date('Y-m-d'),
-            'end_date' => date('Y-m-d'),
-            'category' => $this->faker->randomElement(['success', 'danger', 'warning', 'info']),
-        ])->assertOk();
+        $this->postJson($this->baseUrl, $this->data())->assertOk();
     }
 
     public function test_success_update_event()
     {
-        $this->postJson($this->baseUrl, [
-            'title' => $this->faker->sentence(3),
-            'start_date' => date('Y-m-d'),
-            'end_date' => date('Y-m-d'),
-            'category' => $this->faker->randomElement(['success', 'danger', 'warning', 'info']),
-        ])->assertOk();
+        $this->postJson($this->baseUrl, $this->data())->assertOk();
 
         $event = Event::orderByDesc('id')->first();
         $this->putJson($this->baseUrl. '/'. $event->id, $this->data())
@@ -65,6 +55,15 @@ class EventTest extends TestCase
             'end_date' => date('Y-m-d'),
             'category' => $this->faker->randomElement(['success', 'danger', 'warning', 'info']),
         ];
+    }
+
+    public function test_success_delete_event()
+    {
+        $this->postJson($this->baseUrl, $this->data())->assertOk();
+        
+        $event = Event::orderByDesc('id')->first();
+        $this->putJson($this->baseUrl. '/'. $event->id, array_merge($this->data(),['delete' => 'on']))
+        ->assertStatus(200);
     }
 
     public function test_validation_store_event()
