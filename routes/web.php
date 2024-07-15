@@ -12,6 +12,7 @@ use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\DashboardPostController;
+use App\Http\Controllers\DashboardEventConrtroller;
 use App\Http\Controllers\DashboardCalendarController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -93,5 +94,9 @@ Route::resource('/dashboard/categories', AdminCategoryController::class)->except
 
 Route::resource('/dashboard/calendars', DashboardCalendarController::class)->middleware('auth');
 
-Route::get('events/list', [EventController::class, 'listEvent'])->name('events.list');
-Route::resource('events', EventController::class);
+// Route::get('events/list', [EventController::class, 'listEvent'])->name('events.list');
+// Route::resource('events', EventController::class);
+
+
+Route::get('/dashboard/events/list', [DashboardEventConrtroller::class, 'listEvent'])->name('dashboard.events.list')->middleware('auth');
+Route::resource('/dashboard/events', DashboardEventConrtroller::class)->middleware('auth');

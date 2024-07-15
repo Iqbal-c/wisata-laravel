@@ -19,6 +19,12 @@
                     Calendar Event
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('dashboard/event*') ? 'active' : '' }}" href="/dashboard/events">
+                    <span data-feather="calendar"></span>
+                    Calendar Event2
+                </a>
+            </li>
         </ul>
 
         @can('admin')
