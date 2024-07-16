@@ -39,7 +39,6 @@
             events: `{{ route('dashboard.events.list') }}`,
             editable: true,
             dateClick: function (info) {
-                console.log(info);
                 $.ajax({
                     url: `{{ route('events.create') }}`,
                     data: {

@@ -127,10 +127,8 @@
       <!-- services section start -->
     <div class="services_section layout_padding">
         <div class="container">
-            <h1 class="services_taital">Services </h1>
-            <p class="services_text">tes Services There are many variations of passages of Lorem Ipsum available, but
-                the majority have
-                suffered alteration</p>
+            <h1 class="services_taital">Wisata Unggulan </h1>
+            <p class="services_text">Dapatkan pengalaman tak terlupakan dengan mengunjungi wisata unggulan kami.</p>
             <div class="services_section_2">
                 <div class="row">
                     <div class="col-md-4">

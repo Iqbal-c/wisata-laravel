@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\EventRequest;
+use App\Models\Event;
 use App\Models\Eventdashboard;
 use Illuminate\Http\Request;
 
@@ -21,7 +22,7 @@ class DashboardEventConrtroller extends Controller
         $start = date('Y-m-d', strtotime($request->start));
         $end = date('Y-m-d', strtotime($request->end));
 
-        $events = Eventdashboard::where('start_date', '>=', $start)
+        $events = Event::where('start_date', '>=', $start)
         ->where('end_date', '<=' , $end)->get()
         ->map( fn ($item) => [
             'id' => $item->id,
@@ -38,7 +39,7 @@ class DashboardEventConrtroller extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(Eventdashboard $event)
+    public function create(Event $event)
     {
         return view('event-form', ['data' => $event, 'action' => route('events.store')]);
     }
@@ -46,7 +47,7 @@ class DashboardEventConrtroller extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(EventRequest $request, Eventdashboard $event)
+    public function store(EventRequest $request, Event $event)
     {
         return $this->update($request, $event);
     }
@@ -54,7 +55,7 @@ class DashboardEventConrtroller extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Eventdashboard $event)
+    public function show(Event $event)
     {
         //
     }
@@ -62,7 +63,7 @@ class DashboardEventConrtroller extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Eventdashboard $event)
+    public function edit(Event $event)
     {
         return view('event-form', ['data' => $event, 'action' => route('events.update', $event->id)]);
     }
@@ -70,7 +71,7 @@ class DashboardEventConrtroller extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(EventRequest $request, Eventdashboard $event)
+    public function update(EventRequest $request, Event $event)
     {
         if ($request->has('delete')) {
             return $this->destroy($event);
@@ -91,7 +92,7 @@ class DashboardEventConrtroller extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Eventdashboard $event)
+    public function destroy(Event $event)
     {
         $event->delete();
         return response()->json([
