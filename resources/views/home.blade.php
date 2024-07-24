@@ -131,17 +131,29 @@
             <p class="services_text">Dapatkan pengalaman tak terlupakan dengan mengunjungi wisata unggulan kami.</p>
             <div class="services_section_2">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-4 mt-3">
                         <div><img src="trv/images/img-1.png" class="services_img"></div>
-                        <div class="btn_main"><a href="#">Rafting</a></div>
+                        <div class="btn_main"><a href="#">BETANG NANSARUNAI</a></div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 mt-3">
                         <div><img src="trv/images/img-2.png" class="services_img"></div>
-                        <div class="btn_main active"><a href="#">Hiking</a></div>
+                        <div class="btn_main active"><a href="#">BANYU HABANG</a></div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 mt-3">
                         <div><img src="trv/images/img-3.png" class="services_img"></div>
-                        <div class="btn_main"><a href="#">Camping</a></div>
+                        <div class="btn_main"><a href="#">DESA WAYUN</a></div>
+                    </div>
+                    <div class="col-md-4 mt-3">
+                      <div><img src="trv/images/img-1.png" class="services_img"></div>
+                      <div class="btn_main"><a href="#">BETANG NANSARUNAI</a></div>
+                    </div>
+                    <div class="col-md-4 mt-3">
+                        <div><img src="trv/images/img-2.png" class="services_img"></div>
+                        <div class="btn_main active"><a href="#">BANYU HABANG</a></div>
+                    </div>
+                    <div class="col-md-4 mt-3">
+                        <div><img src="trv/images/img-3.png" class="services_img"></div>
+                        <div class="btn_main"><a href="#">DESA WAYUN</a></div>
                     </div>
                 </div>
             </div>
