@@ -30,18 +30,18 @@ class DatabaseSeeder extends Seeder
         User::factory(3)->create();
 
         Category::create([
-            'name' => 'Web Programming',
-            'slug' => 'web-programming'
+            'name' => 'Wisata Alam',
+            'slug' => 'wisata-alam'
         ]);
 
         Category::create([
-            'name' => 'Web Design',
-            'slug' => 'web-design'
+            'name' => 'Wisata Buatan',
+            'slug' => 'wisata-buatan'
         ]);
 
         Category::create([
-            'name' => 'Personal',
-            'slug' => 'personal'
+            'name' => 'Wisata Religi',
+            'slug' => 'wisata-religi'
         ]);
 
         Post::factory(20)->create();

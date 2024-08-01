@@ -13,16 +13,16 @@
                     Wisata Posts
                 </a>
             </li>
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link {{ Request::is('dashboard/calendar*') ? 'active' : '' }}" href="/dashboard/calendars">
                     <span data-feather="calendar"></span>
-                    Calendar Event
+                    Calendar Event backup
                 </a>
-            </li>
+            </li> --}}
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('dashboard/event*') ? 'active' : '' }}" href="/dashboard/events">
                     <span data-feather="calendar"></span>
-                    Calendar Event2
+                    Calendar Event
                 </a>
             </li>
         </ul>
